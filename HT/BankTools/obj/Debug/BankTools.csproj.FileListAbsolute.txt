@@ -1,0 +1,6 @@
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BankTools\bin\Debug\BankTools.dll
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BankTools\bin\Debug\BankTools.pdb
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BankTools\obj\Debug\BankTools.csproj.AssemblyReference.cache
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BankTools\obj\Debug\BankTools.csproj.CoreCompileInputs.cache
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BankTools\obj\Debug\BankTools.dll
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BankTools\obj\Debug\BankTools.pdb
