@@ -142,10 +142,14 @@ namespace MathTools
         public override string ToString()
         {
             var sign = IsPositive ? "" : "-";
-            var secondSign = IsPositive ? "+" : "-";
+            var secondSign = "";
+            if (IntegerPart != 0)
+            {
+                secondSign = IsPositive ? " + " : " - ";
+            }
             var integerPart = IntegerPart == 0 ? "" : $"{sign}{IntegerPart}";
-            var fraction = Numerator == Denominator ? "" : $" {secondSign} {Numerator}/{Denominator}";
-            string result = $"{integerPart}{fraction}";
+            var fraction = Numerator == Denominator ? "" : $"{secondSign}{Numerator}/{Denominator}";
+            var result = $"{integerPart}{fraction}";
             return result == "" ? "0" : result;
         }
 
@@ -293,10 +297,7 @@ namespace MathTools
         
         public static RationalNumber operator %(RationalNumber a, RationalNumber b)
         {
-            RationalNumber second = Divide(a, b);
-            second.Numerator = 1;
-            second.Denominator = 1;
-            return Difference(a, Multiply(Divide(a, b), second));
+            return new RationalNumber(a.Numerator + b.Numerator * Divide(a, b).IntegerPart, a.Denominator, true);
         }
     }
 }
