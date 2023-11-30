@@ -1,0 +1,6 @@
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BuildingMaster\bin\Debug\BuildingMaster.dll
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BuildingMaster\bin\Debug\BuildingMaster.pdb
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BuildingMaster\obj\Debug\BuildingMaster.csproj.AssemblyReference.cache
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BuildingMaster\obj\Debug\BuildingMaster.csproj.CoreCompileInputs.cache
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BuildingMaster\obj\Debug\BuildingMaster.dll
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\BuildingMaster\obj\Debug\BuildingMaster.pdb
