@@ -1,4 +1,5 @@
 ﻿using BankTools;
+using BuildingMaster;
 using System;
 using System.Globalization;
 using System.Threading;
@@ -23,6 +24,7 @@ namespace Tymakov
         static void Message(string message, int number)
         {
             Console.WriteLine("\nLet's check problem #{0}\nThis program {1}\nPress any to continue...", number, message);
+            Offer();
             Console.ReadKey();
         }
 
@@ -77,7 +79,11 @@ namespace Tymakov
             void HT11_1()
             {
                 Message("tests Creator", 1);
-
+                Console.WriteLine("Creating a building:");
+                uint first = Creator.Create(100, 10, 2, 1);
+                Console.WriteLine(Creator.GetBuilding(first));
+                Console.WriteLine("Remove first:");
+                Creator.RemoveBuilding(first);
             }
             #endregion
 
@@ -97,13 +103,14 @@ namespace Tymakov
                 }
                 Console.WriteLine("Please, input a number of a task:");
                 Console.WriteLine("(example: 11_1)");
+                Offer();
                 string number = Console.ReadLine();
                 if (respond.Equals("ht") || respond.Equals("нт")) // and russian-letters case
                 {
                     switch (number)
                     {
                         case "11_1": HT11_1(); break;
-                        //case 2: HT2(); break;
+                        // case "11_2": HT11_2(); break;
                         default: Console.WriteLine("This is not a command or a number of task"); break;
                     }
                 }
@@ -112,9 +119,8 @@ namespace Tymakov
                     switch (number)
                     {
                         case "11_1": Lab11_1(); break;
-                        //case 2: Lab2(); break;
-                        //case 3: Lab3(); break;
-                        //case 4: Lab4(); break;
+                        // case 3: Lab3(); break;
+                        // case 4: Lab4(); break;
                         default: Console.WriteLine("This is not a command or a number of task"); break;
                     }
                 }

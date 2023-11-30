@@ -8,3 +8,5 @@ C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\Tymakov\obj\Debug\Tymakov.csproj.C
 C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\Tymakov\obj\Debug\Tymakov.csproj.CopyComplete
 C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\Tymakov\obj\Debug\Tymakov.exe
 C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\Tymakov\obj\Debug\Tymakov.pdb
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\Tymakov\bin\Debug\BuildingMaster.dll
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\Tymakov\bin\Debug\BuildingMaster.pdb

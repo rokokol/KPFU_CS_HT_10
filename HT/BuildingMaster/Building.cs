@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Tymakov
+namespace BuildingMaster
 {
-    class Building
+    public class Building
     {
         private static uint lastId;
         public readonly uint id;
