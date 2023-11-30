@@ -115,6 +115,17 @@ namespace Tymakov
                 Console.WriteLine($"a / b = {a / b}");
                 Console.WriteLine($"a == b is {a == b}");
                 Console.WriteLine($"a != b is {a != b}");
+                Console.WriteLine($"a > b is {a > b}");
+                Console.WriteLine($"a < b is {a < b}");
+                Console.WriteLine($"a >= b is {a >= b}");
+                Console.WriteLine($"a <= b is {a <= b}");
+                Console.WriteLine($"++a is {++a}");
+                Console.WriteLine($"--a is {--a}");
+                Console.WriteLine($"a++ is {a++}");
+                Console.WriteLine($"a-- is {a--}");
+                Console.WriteLine($"(int) a is {(int) a}");
+                Console.WriteLine($"(float) a is {(float) a}");
+                Console.WriteLine($"a % b is {a % b}");
             }
             
             #endregion

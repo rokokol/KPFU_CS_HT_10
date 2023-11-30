@@ -5,7 +5,7 @@ namespace MathTools
     /// <summary>
     /// The rational number from the Q set 
     /// </summary>
-    public class RationalNumber
+    public class RationalNumber : IComparable<RationalNumber>
     {
         public ulong IntegerPart { get; set; }
         public ulong Numerator { get; set; }
@@ -143,8 +143,10 @@ namespace MathTools
         {
             var sign = IsPositive ? "" : "-";
             var secondSign = IsPositive ? "+" : "-";
-            var integerPart = IntegerPart == 0 ? "" : $"{IntegerPart} {secondSign} ";
-            return $"{sign}{integerPart}{Numerator}/{Denominator}";
+            var integerPart = IntegerPart == 0 ? "" : $"{sign}{IntegerPart}";
+            var fraction = Numerator == Denominator ? "" : $" {secondSign} {Numerator}/{Denominator}";
+            string result = $"{integerPart}{fraction}";
+            return result == "" ? "0" : result;
         }
 
         /// <summary>
@@ -166,6 +168,19 @@ namespace MathTools
             Simplify();
             other.Simplify();
             return IntegerPart == other.IntegerPart && Numerator == other.Numerator && Denominator == other.Denominator && IsPositive == other.IsPositive;
+        }
+
+        public int CompareTo(RationalNumber other)
+        {
+            if (ReferenceEquals(this, other)) return 0;
+            if (ReferenceEquals(null, other)) return 1;
+            var integerPartComparison = IntegerPart.CompareTo(other.IntegerPart);
+            if (integerPartComparison != 0) return integerPartComparison;
+            var numeratorComparison = Numerator.CompareTo(other.Numerator);
+            if (numeratorComparison != 0) return numeratorComparison;
+            var denominatorComparison = Denominator.CompareTo(other.Denominator);
+            if (denominatorComparison != 0) return denominatorComparison;
+            return IsPositive.CompareTo(other.IsPositive);
         }
 
         public override bool Equals(object obj)
@@ -232,6 +247,56 @@ namespace MathTools
         public static bool operator !=(RationalNumber a, RationalNumber b)
         {
             return !ReferenceEquals(null, a) && !a.Equals(b);
+        }
+        
+        public static bool operator >(RationalNumber a, RationalNumber b)
+        {
+            return !ReferenceEquals(null, a) && a.CompareTo(b) > 0;
+        }
+        
+        public static bool operator <(RationalNumber a, RationalNumber b)
+        {
+            return !ReferenceEquals(null, a) && a.CompareTo(b) < 0;
+        }
+        
+        public static bool operator >=(RationalNumber a, RationalNumber b)
+        {
+            return !ReferenceEquals(null, a) && a.CompareTo(b) >= 0;
+        }
+        
+        public static bool operator <=(RationalNumber a, RationalNumber b)
+        {
+            return !ReferenceEquals(null, a) && a.CompareTo(b) <= 0;
+        }
+        
+        public static RationalNumber operator ++(RationalNumber a)
+        {
+            a.IntegerPart += 1;
+            return a;
+        }
+        
+        public static RationalNumber operator --(RationalNumber a)
+        {
+            a.IntegerPart -= 1;
+            return a;
+        }
+        
+        public static implicit operator int(RationalNumber a)
+        {
+            return (int) a.IntegerPart;
+        }
+        
+        public static implicit operator float(RationalNumber a)
+        {
+            return a.IntegerPart + (float) a.Numerator / a.Denominator;
+        }
+        
+        public static RationalNumber operator %(RationalNumber a, RationalNumber b)
+        {
+            RationalNumber second = Divide(a, b);
+            second.Numerator = 1;
+            second.Denominator = 1;
+            return Difference(a, Multiply(Divide(a, b), second));
         }
     }
 }
