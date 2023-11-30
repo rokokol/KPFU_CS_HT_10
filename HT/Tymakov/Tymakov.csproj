@@ -58,6 +58,10 @@
       <Project>{697323e4-6513-4767-86b5-ae7461f18648}</Project>
       <Name>BuildingMaster</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MathTools\MathTools.csproj">
+      <Project>{c9fd442b-0ce5-41f4-b8d9-58269bc7e240}</Project>
+      <Name>MathTools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

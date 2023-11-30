@@ -3,6 +3,7 @@ using BuildingMaster;
 using System;
 using System.Globalization;
 using System.Threading;
+using MathTools;
 
 namespace Tymakov
 {
@@ -63,6 +64,7 @@ namespace Tymakov
         static void Main(string[] args)
         {
             #region Lab
+            
             void Lab11_1()
             {
                 Message("tests AccountType fabric", 1);
@@ -73,9 +75,52 @@ namespace Tymakov
                 Console.WriteLine("Move it to the trash:");
                 fabric.RemoveAccount(first);
             }
+
+            void Lab12_1()
+            {
+                Message("tests overriden operators for AccountType", 2);
+                AccountTypeFabric fabric = new AccountTypeFabric();
+                ulong first = fabric.CreateAccount(1000);
+                ulong second = fabric.CreateAccount(240);
+                
+                Console.WriteLine("Accounts:");
+                Console.WriteLine("\tFirst:");
+                Console.WriteLine(fabric.GetAccount(first));
+                Console.WriteLine("\tSecond:");
+                Console.WriteLine(fabric.GetAccount(second));
+
+                #region Testing
+
+                Console.WriteLine("Checking the not-equal-to operator for different accounts:");
+                Console.WriteLine(fabric.GetAccount(first) != fabric.GetAccount(second));
+                Console.WriteLine("Checking the not-equal-to operator for same accounts:");
+                Console.WriteLine(fabric.GetAccount(first) != fabric.GetAccount(first));
+                Console.WriteLine("Checking the equal-to operator for different accounts:");
+                Console.WriteLine(fabric.GetAccount(first) != fabric.GetAccount(second));
+                Console.WriteLine("Checking the equal-to operator for same accounts:");
+                Console.WriteLine(fabric.GetAccount(second) != fabric.GetAccount(second));
+
+                #endregion
+            }
+
+            void Lab12_2()
+            {
+                Message("tests a rational numbers class", 3);
+                RationalNumber a = new RationalNumber(6, 4, true);
+                RationalNumber b = new RationalNumber(1, 3, false);
+                Console.WriteLine($"a: {a}, b: {b}");
+                Console.WriteLine($"a + b = {a + b}");
+                Console.WriteLine($"a - b = {a - b}");
+                Console.WriteLine($"a * b = {a * b}");
+                Console.WriteLine($"a / b = {a / b}");
+                Console.WriteLine($"a == b is {a == b}");
+                Console.WriteLine($"a != b is {a != b}");
+            }
+            
             #endregion
 
             #region HT
+            
             void HT11_1()
             {
                 Message("tests Creator", 1);
@@ -85,6 +130,12 @@ namespace Tymakov
                 Console.WriteLine("Remove first:");
                 Creator.RemoveBuilding(first);
             }
+
+            void HT12_1()
+            {
+                
+            }
+            
             #endregion
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru");
@@ -110,7 +161,7 @@ namespace Tymakov
                     switch (number)
                     {
                         case "11_1": HT11_1(); break;
-                        // case "11_2": HT11_2(); break;
+                        case "12_1": HT12_1(); break;
                         default: Console.WriteLine("This is not a command or a number of task"); break;
                     }
                 }
@@ -119,8 +170,8 @@ namespace Tymakov
                     switch (number)
                     {
                         case "11_1": Lab11_1(); break;
-                        // case 3: Lab3(); break;
-                        // case 4: Lab4(); break;
+                        case "12_1": Lab12_1(); break;
+                        case "12_2": Lab12_2(); break;
                         default: Console.WriteLine("This is not a command or a number of task"); break;
                     }
                 }

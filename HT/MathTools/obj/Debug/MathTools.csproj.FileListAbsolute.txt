@@ -1,0 +1,6 @@
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\MathTools\bin\Debug\MathTools.dll
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\MathTools\bin\Debug\MathTools.pdb
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\MathTools\obj\Debug\MathTools.csproj.AssemblyReference.cache
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\MathTools\obj\Debug\MathTools.csproj.CoreCompileInputs.cache
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\MathTools\obj\Debug\MathTools.dll
+C:\Users\Rokoko\source\repos\KPFU_CS_HT_10\HT\MathTools\obj\Debug\MathTools.pdb

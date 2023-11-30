@@ -1,10 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
 
 namespace BankTools
 {
     public class AccountType
     {
+        public static bool operator ==(AccountType first, AccountType second)
+        {
+            return first.Equals(second);
+        }
+        
+        public static bool operator !=(AccountType first, AccountType second)
+        {
+            return !first.Equals(second);
+        }
+        
         #region privates
         private static ulong index;
         private decimal balance;
@@ -145,6 +156,31 @@ namespace BankTools
         public override string ToString()
         {
             return $"Account №{accountNumber:0000 0000 0000 0000}\n\tAccount type: {accountType.ToString()}\n\tBalance: {balance:C2}";
+        }
+
+        protected bool Equals(AccountType other)
+        {
+            return balance == other.balance && accountNumber == other.accountNumber && accountType == other.accountType && Equals(trans, other.trans);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((AccountType)obj);
+        }
+        
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = balance.GetHashCode();
+                hashCode = (hashCode * 397) ^ accountNumber.GetHashCode();
+                hashCode = (hashCode * 397) ^ (int)accountType;
+                hashCode = (hashCode * 397) ^ (trans != null ? trans.GetHashCode() : 0);
+                return hashCode;
+            }
         }
     }
 }
