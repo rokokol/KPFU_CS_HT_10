@@ -1,6 +1,8 @@
 ﻿using BankTools;
 using BuildingMaster;
 using System;
+using Books;
+using static Books.Sortings;
 using System.Globalization;
 using System.Threading;
 using MathTools;
@@ -9,6 +11,7 @@ namespace Tymakov
 {
     internal class Program
     {
+        delegate void Test();
         /// <summary>
         /// Writes "> " in start of the line.
         /// </summary>
@@ -144,7 +147,44 @@ namespace Tymakov
 
             void HT12_1()
             {
+                Message("tests a complex numbers class", 2);
+                ComplexNumber a = new ComplexNumber(6, 4);
+                ComplexNumber b = new ComplexNumber(6, -4);
+                Console.WriteLine($"a: {a}, b: {b}");
+                Console.WriteLine($"a + b = {a + b}");
+                Console.WriteLine($"a - b = {a - b}");
+                Console.WriteLine($"a * b = {a * b}");
+                Console.WriteLine($"a / b = {a / b}");
+                Console.WriteLine($"a == b is {a == b}");
+                Console.WriteLine($"a != b is {a != b}");
+            }
+
+            void HT12_2()
+            {
+                Message("testing a class to sort books", 3);
+                Bookcase bookcase = new Bookcase(
+                    new Book("Aligori", "ZozoRed", "Doli"),
+                        new Book("Zebri", "DomModi", "Anton"),
+                        new Book("Drestins'", "Alivers", "Zokkie"));
+                Console.WriteLine("Books:");
+                Console.WriteLine(bookcase);
+                Console.WriteLine();
+                Console.WriteLine("Sorting by name:");
+                Compare comp = NameSort;
+                bookcase.Sort(comp);
+                Console.WriteLine(bookcase);
                 
+                Console.WriteLine("Sorting by author:");
+                comp -= NameSort;
+                comp += AuthorSort;
+                bookcase.Sort(comp);
+                Console.WriteLine(bookcase);
+                
+                Console.WriteLine("Sorting by publish house:");
+                comp -= AuthorSort;
+                comp += PublishHouseSort;
+                bookcase.Sort(comp);
+                Console.WriteLine(bookcase);
             }
             
             #endregion
@@ -173,6 +213,7 @@ namespace Tymakov
                     {
                         case "11_1": HT11_1(); break;
                         case "12_1": HT12_1(); break;
+                        case "12_2": HT12_2(); break;
                         default: Console.WriteLine("This is not a command or a number of task"); break;
                     }
                 }

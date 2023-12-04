@@ -54,6 +54,10 @@
       <Project>{1542e079-5568-4d30-b417-02564a1add53}</Project>
       <Name>BankTools</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Books\Books.csproj">
+      <Project>{ee057494-b148-4f56-9761-a907400464ed}</Project>
+      <Name>Books</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BuildingMaster\BuildingMaster.csproj">
       <Project>{697323e4-6513-4767-86b5-ae7461f18648}</Project>
       <Name>BuildingMaster</Name>
