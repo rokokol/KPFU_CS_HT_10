@@ -9,7 +9,25 @@ namespace MathTools
     {
         public ulong IntegerPart { get; set; }
         public ulong Numerator { get; set; }
-        public ulong Denominator { get; set; }
+
+        private ulong denominator;
+        public ulong Denominator
+        {
+            get
+            {
+                return denominator;
+            }
+            
+            set
+            {
+                if (value == 0)
+                {
+                    throw new DivideByZeroException("Denominator cannot de equals zero!");
+                }
+
+                denominator = value;
+            }
+        }
         public bool IsPositive { get; set; }
 
         /// <summary>

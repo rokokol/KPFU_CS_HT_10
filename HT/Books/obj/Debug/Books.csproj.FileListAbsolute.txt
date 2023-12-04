@@ -1,0 +1,6 @@
+/home/rokoko/RiderProjects/KPFU_CS_HT_10/HT/Books/bin/Debug/Books.dll
+/home/rokoko/RiderProjects/KPFU_CS_HT_10/HT/Books/bin/Debug/Books.pdb
+/home/rokoko/RiderProjects/KPFU_CS_HT_10/HT/Books/obj/Debug/Books.csproj.AssemblyReference.cache
+/home/rokoko/RiderProjects/KPFU_CS_HT_10/HT/Books/obj/Debug/Books.csproj.CoreCompileInputs.cache
+/home/rokoko/RiderProjects/KPFU_CS_HT_10/HT/Books/obj/Debug/Books.dll
+/home/rokoko/RiderProjects/KPFU_CS_HT_10/HT/Books/obj/Debug/Books.pdb

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingMaster", "BuildingM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathTools", "MathTools\MathTools.csproj", "{C9FD442B-0CE5-41F4-B8D9-58269BC7E240}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books", "Books\Books.csproj", "{EE057494-B148-4F56-9761-A907400464ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C9FD442B-0CE5-41F4-B8D9-58269BC7E240}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9FD442B-0CE5-41F4-B8D9-58269BC7E240}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9FD442B-0CE5-41F4-B8D9-58269BC7E240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE057494-B148-4F56-9761-A907400464ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE057494-B148-4F56-9761-A907400464ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE057494-B148-4F56-9761-A907400464ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE057494-B148-4F56-9761-A907400464ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
